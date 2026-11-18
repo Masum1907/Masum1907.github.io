@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic website of Masum Rayhan, Lecturer in Computer Science and Engineering and AI researcher.">
+<title>Masum Rayhan | Academic Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #1d2939;
+    line-height: 1.7;
+    background: #ffffff;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    border-bottom: 1px solid #e8edf2;
+    z-index: 100;
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font: 800 25px Manrope, sans-serif;
+    color: #17334a;
+}
+
+.logo span { color: #159688; }
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover { color: #159688; }
+
+.hero {
+    background: linear-gradient(120deg, #f0f8f7, #f5f7fb);
+    padding: 90px 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: #159688;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font: 800 clamp(42px, 7vw, 68px)/1.1 Manrope, sans-serif;
+    color: #17334a;
+    margin-bottom: 15px;
+}
+
+h1 span { color: #159688; }
+
+.hero h2 {
+    font: 600 20px Manrope, sans-serif;
+    margin-bottom: 18px;
+}
+
+.lead {
+    color: #596879;
+    max-width: 680px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.btn {
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.primary {
+    background: #16877e;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #bfcbd5;
+    color: #26394d;
+}
+
+.social {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #526477;
+}
+
+.social a:hover { color: #159688; }
+
+.profile-card {
+    background: white;
+    border: 1px solid #e4ebef;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 15px 40px #17334a12;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #e0f2ee;
+    color: #16877e;
+    display: grid;
+    place-items: center;
+    font: 800 26px Manrope;
+    margin-bottom: 20px;
+}
+
+.profile-card h3 {
+    font: 700 18px Manrope;
+    margin: 12px 0;
+}
+
+.profile-card p {
+    font-size: 14px;
+    color: #667586;
+}
+
+.profile-card hr {
+    border: 0;
+    border-top: 1px solid #edf0f2;
+    margin: 20px 0;
+}
+
+section {
+    padding: 75px 0;
+}
+
+.section-title {
+    margin-bottom: 32px;
+}
+
+.section-title h2 {
+    font: 800 34px Manrope;
+    color: #17334a;
+}
+
+.section-title p {
+    color: #159688;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-text {
+    max-width: 850px;
+    color: #596879;
+}
+
+.alt { background: #f5f8fa; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 23px;
+    background: white;
+    border: 1px solid #e5ebef;
+    border-radius: 9px;
+}
+
+.card h3 {
+    font: 700 17px Manrope;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #667586;
+}
+
+.number {
+    color: #159688;
+    font-weight: 700;
+}
+
+.publication {
+    padding: 24px 0;
+    border-bottom: 1px solid #e5eaee;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+}
+
+.year {
+    color: #16877e;
+    font-weight: 700;
+}
+
+.publication h3 {
+    font: 700 17px Manrope;
+    margin-bottom: 7px;
+}
+
+.publication p {
+    color: #687686;
+    font-size: 14px;
+}
+
+.publication a {
+    color: #16877e;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.status {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 15px;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+.published {
+    background: #e4f4ee;
+    color: #16745f;
+}
+
+.accepted {
+    background: #fff3df;
+    color: #956311;
+}
+
+.timeline {
+    border-left: 2px solid #cce3df;
+    padding-left: 25px;
+    margin-left: 8px;
+}
+
+.timeline-item {
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #16877e;
+    border-radius: 50%;
+    left: -32px;
+    top: 8px;
+}
+
+.timeline-item h3 {
+    font: 700 18px Manrope;
+}
+
+.timeline-item p,
+.timeline-item li {
+    color: #667586;
+    font-size: 14px;
+}
+
+.timeline-item ul {
+    padding-left: 20px;
+}
+
+.education-item {
+    padding: 22px;
+    background: white;
+    border: 1px solid #e5ebef;
+    border-radius: 9px;
+}
+
+.education-item h3 {
+    font: 700 17px Manrope;
+    margin: 8px 0;
+}
+
+.education-item p {
+    color: #667586;
+    font-size: 14px;
+}
+
+.education-item strong {
+    color: #16877e;
+    font-size: 14px;
+}
+
+.contact {
+    background: #17334a;
+    color: white;
+}
+
+.contact h2 {
+    font: 800 34px Manrope;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #c7d2dc;
+    margin-bottom: 8px;
+}
+
+.contact a { color: #75d6c9; }
+
+footer {
+    background: #102638;
+    color: #b5c2ce;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media(max-width: 750px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { gap: 10px; font-size: 12px; flex-wrap: wrap; }
+}
+
+@media(max-width: 520px) {
+    nav { align-items: flex-start; padding: 15px 0; flex-direction: column; gap: 12px; }
+    .nav-links { gap: 13px; }
+    .grid { grid-template-columns: 1fr; }
+    .publication { grid-template-columns: 1fr; gap: 5px; }
+    section { padding: 55px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="container">
+    <a href="#home" class="logo">MR<span>.</span></a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div>
+    <p class="eyebrow">ACADEMIC WEBSITE · COMPUTER SCIENCE & ENGINEERING</p>
+
+    <h1>Masum <span>Rayhan</span></h1>
+
+    <h2>Lecturer | AI & Machine Learning Researcher</h2>
+
+    <p class="lead">
+        I am a Lecturer in the Department of Computer Science and Engineering
+        at Khulna Khan Bahadur Ahsanullah University (KKBAU), Bangladesh.
+        My research interests include deep learning, computer vision,
+        natural language processing, and explainable artificial intelligence.
+    </p>
+
+    <div class="buttons">
+        <a href="#publications" class="btn primary">View Publications</a>
+        <a href="mailto:masum1907@cseku.ac.bd" class="btn secondary">Contact Me</a>
+    </div>
+
+    <div class="social">
+        <a href="https://scholar.google.com/citations?user=THVF2yYAAAAJ&hl=en" target="_blank">Google Scholar ↗</a>
+        <a href="https://orcid.org/0009-0001-8833-3058" target="_blank">ORCID ↗</a>
+        <a href="https://github.com/Masum1907" target="_blank">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/masumrayhan/" target="_blank">LinkedIn ↗</a>
+    </div>
+</div>
+
+<div class="profile-card">
+    <div class="avatar">MR</div>
+    <p class="eyebrow">CURRENT POSITION</p>
+    <h3>Lecturer & Additional Director (In-Charge), ICT Cell</h3>
+    <p>Department of CSE<br>Khulna Khan Bahadur Ahsanullah University</p>
+    <hr>
+    <p><strong>Location</strong><br>Khulna, Bangladesh</p>
+    <p><strong>Email</strong><br>
+    <a href="mailto:masum1907@cseku.ac.bd">masum1907@cseku.ac.bd</a></p>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+    <div class="section-title">
+        <p>INTRODUCTION</p>
+        <h2>About Me</h2>
+    </div>
+
+    <div class="about-text">
+        <p>
+        I am a computer science educator and researcher interested in
+        developing practical and reliable AI methods. I completed my
+        M.Sc. in Computer Science and Engineering at Khulna University
+        in 2025 with a CGPA of 3.98/4.00. I also completed my B.Sc. in
+        CSE from Khulna University in 2023 with a CGPA of 3.85/4.00.
+        </p>
+        <br>
+        <p>
+        Alongside teaching and research, I contribute to academic and
+        institutional activities at KKBAU, including curriculum revision,
+        university admission activities, and ICT-related administration.
+        </p>
+    </div>
+</div>
+</section>
+
+<!-- RESEARCH -->
+<section class="alt" id="research">
+<div class="container">
+    <div class="section-title">
+        <p>RESEARCH AREAS</p>
+        <h2>Research Interests</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <span class="number">01</span>
+            <h3>Artificial Intelligence & Machine Learning</h3>
+            <p>Learning-based methods for intelligent systems and real-world applications.</p>
+        </div>
+
+        <div class="card">
+            <span class="number">02</span>
+            <h3>Deep Learning & Computer Vision</h3>
+            <p>Visual understanding, image analysis, and image-based recognition.</p>
+        </div>
+
+        <div class="card">
+            <span class="number">03</span>
+            <h3>Natural Language Processing</h3>
+            <p>Bangla language technologies, language models, and sentiment analysis.</p>
+        </div>
+
+        <div class="card">
+            <span class="number">04</span>
+            <h3>Explainable AI</h3>
+            <p>Interpretability, uncertainty-aware learning, and transparent AI systems.</p>
+        </div>
+
+        <div class="card">
+            <span class="number">05</span>
+            <h3>Vision-Language Models</h3>
+            <p>Multimodal learning and image caption generation.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+<div class="container">
+    <div class="section-title">
+        <p>RESEARCH OUTPUT</p>
+        <h2>Publications</h2>
+    </div>
+
+    <div class="publication">
+        <div class="year">2026<br><span class="status accepted">Accepted</span></div>
+        <div>
+            <h3>ECAM-Augmented AU-CNN++: An Uncertainty-Aware Lightweight Attention Network with Entropy-Calibrated Explainability for Plant Disease Classification</h3>
+            <p>Masum Rayhan</p>
+            <p>8th International Conference on Trends in Computational and Cognitive Engineering (TCCE 2026).</p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="year">2026<br><span class="status accepted">Accepted</span></div>
+        <div>
+            <h3>A Comparative Evaluation of BanglaBERT-Based Architectures for Bangla Aspect-Based Sentiment Analysis</h3>
+            <p>M. Alam, A. H. Ashik, and M. Rayhan</p>
+            <p>IEEE International Conference on Computer and Information Technology (ICCIT 2026).</p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="year">2025<br><span class="status published">Published</span></div>
+        <div>
+            <h3>Advanced Bangla Caption Generation from Images Using Vision-Language Models and Deep Learning Techniques</h3>
+            <p>M. Rayhan and F. T. Pinki</p>
+            <p>28th International Conference on Computer and Information Technology (ICCIT 2025).</p>
+            <a href="https://doi.org/10.1109/ICCIT68739.2025.11491164" target="_blank">
+                DOI: 10.1109/ICCIT68739.2025.11491164 ↗
+            </a>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="year">2023<br><span class="status published">Published</span></div>
+        <div>
+            <h3>MRI Image-Based Brain Tumor Classification Using Transfer Learning and XAI</h3>
+            <p>M. Rayhan, S. Mondal, and F. T. Pinki</p>
+            <p>Trends in Electronics and Health Informatics (TEHI 2023), Lecture Notes in Networks and Systems, Vol. 1034, pp. 391–405.</p>
+            <a href="https://doi.org/10.1007/978-981-97-3937-0_27" target="_blank">
+                DOI: 10.1007/978-981-97-3937-0_27 ↗
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="alt" id="experience">
+<div class="container">
+    <div class="section-title">
+        <p>ACADEMIC APPOINTMENTS</p>
+        <h2>Experience & Service</h2>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <p><strong>January 2024 – Present</strong></p>
+            <h3>Lecturer & Additional Director (In-Charge), ICT Cell</h3>
+            <p>Department of CSE, Khulna Khan Bahadur Ahsanullah University</p>
+            <ul>
+                <li>Secretary, CSE Program Curriculum Revision Committee.</li>
+                <li>Member, University Admission Committee.</li>
+                <li>University representative for BAETE and Apostille-related activities.</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <p><strong>October 2024 – Present</strong></p>
+            <h3>Lecturer (Part-Time)</h3>
+            <p>CSE Discipline, Khulna University</p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Peer Review</h3>
+            <p>Peer Reviewer, Elsevier (January 2026); Reviewer, COMPAS 2026 (University of Dhaka); Reviewer, ICCA 2026 (AIUB).</p>
+        </div>
+
+        <div class="card">
+            <h3>Reviewer Invitation</h3>
+            <p>Invited Reviewer, ICREST 2027.</p>
+        </div>
+
+        <div class="card">
+            <h3>Professional Development</h3>
+            <p>BAETE Khulna Regional Workshop; UGC Bangladesh workshop on Apostille for Educational Certificate Attestation.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="container">
+    <div class="section-title">
+        <p>ACADEMIC BACKGROUND</p>
+        <h2>Education</h2>
+    </div>
+
+    <div class="grid">
+        <div class="education-item">
+            <span class="number">2025</span>
+            <h3>M.Sc. in Computer Science & Engineering</h3>
+            <p>Khulna University</p>
+            <strong>CGPA: 3.98 / 4.00</strong>
+        </div>
+
+        <div class="education-item">
+            <span class="number">2023</span>
+            <h3>B.Sc. in Computer Science & Engineering</h3>
+            <p>Khulna University</p>
+            <strong>CGPA: 3.85 / 4.00</strong>
+        </div>
+
+        <div class="education-item">
+            <span class="number">2018</span>
+            <h3>Higher Secondary Certificate (Science)</h3>
+            <p>Gaokhali School and College</p>
+            <strong>GPA: 5.00 / 5.00</strong>
+        </div>
+
+        <div class="education-item">
+            <span class="number">2016</span>
+            <h3>Secondary School Certificate (Science)</h3>
+            <p>Kalardoania Secondary School</p>
+            <strong>GPA: 5.00 / 5.00</strong>
+        </div>
+    </div>
+
+    <br>
+    <h3>Achievements & Awards</h3>
+    <ul style="padding-left:22px; color:#667586;">
+        <li>University Research Scholarship – M.Sc. studies, Khulna University.</li>
+        <li>Merit Scholarship – Undergraduate studies, Khulna University.</li>
+        <li>10th Place, KYAU National Hackathon 2023, as a member of KU_Outliers.</li>
+    </ul>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
+    <h2>Contact</h2>
+    <p>For academic collaboration, research discussions, and professional inquiries:</p>
+    <p><strong>Email:</strong> <a href="mailto:masum1907@cseku.ac.bd">masum1907@cseku.ac.bd</a></p>
+    <p><strong>Location:</strong> Khulna, Bangladesh</p>
+    <p><strong>University Profile:</strong>
+    <a href="https://www.kkbau.ac.bd/departments/cse/masum-rayhan/" target="_blank">KKBAU Profile ↗</a></p>
+    <p><strong>ResearchGate:</strong>
+    <a href="https://www.researchgate.net/profile/Masum-Rayhan" target="_blank">ResearchGate ↗</a></p>
+</div>
+</section>
+
+</main>
+
+<footer>
+    © <span id="year"></span> Masum Rayhan | Academic Website
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
